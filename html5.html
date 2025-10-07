@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLINIK KAMPUS UNIPDU</title>
+    </head>
+<body>
+
+    <header>
+        <h1>Pendaftaran Klinik Kampus-Unipdu</h1>
+    </header>
+
+    <main> 
+        
+        <section>
+            <h2>FORMULIR SURVEY DASAR</h2>
+
+            <form action="/submit-pendaftaran" method="POST">
+                <table>
+                    <tr>
+                        <td><label for="nama">Nama Lengkap:</label></td>
+                        <td><input type="text" id="nama" name="nama_lengkap" required autofocus></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" id="password" name="kata_sandi" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" id="email" name="email_user" required placeholder="nama@kampus.ac.id"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="website">Website/Blog:</label></td>
+                        <td><input type="url" id="website" name="website_url" placeholder="https://blogpribadi.com"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="janji_temu">Tanggal Janji Temu:</label></td>
+                        <td><input type="date" id="janji_temu" name="tanggal_janji_temu"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="jarak_range">Jarak Rumah ke Kampus (km):</label></td>
+                        <td>
+                            <input type="range" id="jarak_range" name="jarak" min="0" max="50" step="5" value="10">
+                            <span id="range_output">10 km</span> 
+                            <script>
+                                const rangeInput = document.getElementById('jarak_range');
+                                const rangeOutput = document.getElementById('range_output');
+                                rangeInput.addEventListener('input', (event) => {
+                                    rangeOutput.textContent = event.target.value + ' km';
+                                });
+                            </script>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="warna_suka">Warna Kesukaan:</label></td>
+                        <td><input type="color" id="warna_suka" name="warna_favorit" value="#383232"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Jenis Kelamin:</td>
+                        <td>
+                            <input type="radio" id="pria" name="jenis_kelamin" value="pria" required>
+                            <label for="pria">Laki-laki</label>
+                            <input type="radio" id="wanita" name="jenis_kelamin" value="wanita">
+                            <label for="wanita">Perempuan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hobi (Maks 3):</td>
+                        <td> 
+                            <input type="checkbox" id="membaca" name="hobi[]" value="membaca">
+                            <label for="membaca">Membaca</label><br>
+                            <input type="checkbox" id="olahraga" name="hobi[]" value="olahraga">
+                            <label for="olahraga">Olahraga</label><br>
+                            <input type="checkbox" id="memasak" name="hobi[]" value="memasak">
+                            <label for="memasak">Memasak</label><br>
+                            <input type="checkbox" id="traveling" name="hobi[]" value="traveling">
+                            <label for="traveling">Traveling</label>
+                            <input type="checkbox" id="Balapan" name="hobi[]" value="Balapan">
+                            <label for="Balapan">Balapan</label>
+                            <input type="checkbox" id="Musik" name="hobi[]" value="Musik">
+                            <label for="Musik">Musik</label> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="kota">Asal Kota:</label></td>
+                        <td>
+                            <select id="kota" name="asal_kota" required>
+                                <option value="">-- Pilih Kota --</option>
+                                <option value="jakarta">Jakarta</option>
+                                <option value="bandung">Bandung</option>
+                                <option value="surabaya">Surabaya</option>
+                                <option value="Mojokerto">Mojokerto</option>
+                                <option value="Jombang">Jombang</option>
+                                <option value="Kediri">Kediri</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;"><label for="komentar">Komentar:</label></td>
+                        <td><textarea id="komentar" name="komentar_tambahan" rows="4" cols="50"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input type="submit" value="Kirim Data">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Langkah Pendaftaran</h3>
+            <ul>
+                <li>Isi formulir dengan lengkap.</li>
+                <li>Klik tombol "KIRIM DATA" .</li>
+                <li>Tunggu konfirmasi email.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Jadwal Dokter</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Jam Praktik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Senin</td>
+                        <td>14:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <td>Rabu</td>
+                        <td>10:00 - 12:00</td>
+                    </tr>
+                    <tr>
+                        <td>Jumat</td>
+                        <td>16:00 - 19:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; Situs Resmi unipdu.</p>
+    </footer>
+
+</body>
+</html>
